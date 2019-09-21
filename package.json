@@ -1,7 +1,7 @@
 {
   "name": "latermom",
   "version": "1.0.0",
-  "description": "Later Mom is a lazy es6 DataStructures factory",
+  "description": "Later Mom is a lazy es6 DataStructures factory also known as cache",
   "main": "index.js",
   "scripts": {
     "test": "jest"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Prozi/latermom/issues"
   },
-  "homepage": "https://github.com/Prozi/latermom#readme"
+  "homepage": "https://github.com/Prozi/latermom#readme",
+  "dependencies": {
+    "jest": "^24.9.0"
+  }
 }
