@@ -15,3 +15,16 @@ test('Getter is able to handle multiple arguments', () => {
     expect(positionCache.get(13, 3, 7)).toBe('13__3__7')
     expect(positionCache.data.get('13,3,7')).toBe('13__3__7')
 })
+
+test('Readme has working code', () => {
+    const Mom = require('latermom')
+
+    // create Mom, with factory function that takes any number of parameters
+    const mom = new Mom(_ => Math.random())
+
+    const a = mom.get(1, 2, 3)
+
+    const b = mom.get(1, 2, 3)
+
+    expect(a).toBe(b)
+})
