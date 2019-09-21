@@ -1,13 +1,19 @@
-module.exports = class LazyMap {
-    constructor(getter) {
-        this.factory = (...args) => getter.apply(this, args)
+// Lazy Cache based on Map
+module.exports = class LaterMom {
+    // factory for creating entries
+    constructor(factory) {
+        this.factory = factory
         this.data = new Map()
     }
-    del(key) {
-        return this.data.delete(key)
+
+    // creates a string from args
+    getKey(...args) {
+        return args.length > 1 ? args.join(',') : args[0]
     }
+
+    // get entry at [args]
     get(...args) {
-        const key = args.length > 1 ? args.join(',') : args[0]
+        const key = this.getKey(...args)
         let val = this.data.get(key)
         if (!val) {
             val = this.factory(...args)
@@ -15,7 +21,14 @@ module.exports = class LazyMap {
         }
         return val
     }
-    each(cb) {
-        return this.data.forEach(cb)
+
+    // perform callback on each entry
+    each(callback) {
+        return this.data.forEach(callback)
+    }
+
+    // delete entry at [args]
+    del(...args) {
+        return this.data.delete(this.getKey(...args))
     }
 }
