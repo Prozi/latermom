@@ -1,0 +1,23 @@
+{
+  "name": "latermom",
+  "version": "1.0.0",
+  "description": "Later Mom is a lazy es6 DataStructures factory",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prozi/latermom.git"
+  },
+  "keywords": [
+    "later",
+    "mom"
+  ],
+  "author": "Jacek Pietal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Prozi/latermom/issues"
+  },
+  "homepage": "https://github.com/Prozi/latermom#readme"
+}
