@@ -2,6 +2,8 @@
 
 This is really a 0 dependencies Lazy Set implementation leveraging usage of es6 data structures and lazy caching.
 
+[![npm version](https://badge.fury.io/js/latermom.svg)](https://badge.fury.io/js/latermom) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Prozi/latermom/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Prozi/latermom/?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/Prozi/latermom/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Prozi/latermom?targetFile=package.json) [![Maintainability](https://api.codeclimate.com/v1/badges/cf7828e55f51edffbe3d/maintainability)](https://codeclimate.com/github/Prozi/latermom/maintainability)
+
 ## Installation
 
 `yarn add latermom --save`
