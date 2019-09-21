@@ -11,6 +11,12 @@ module.exports = class LaterMom {
         return args.length > 1 ? args.join(',') : args[0]
     }
 
+    // has entry at [args]
+    has(...args) {
+        const key = this.getKey(...args)
+        return this.data.has(key)
+    }
+    
     // get entry at [args]
     get(...args) {
         const key = this.getKey(...args)

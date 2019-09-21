@@ -32,6 +32,7 @@ if (a !== b) {
 methods
 
 * getKey(...args) - creates string key from args
+* has(...args) - check if has entry at key created from args
 * get(...args) - get entry at key created from args, lazy instantiated by factory
 * del(...args) - deletes entry from data at key created from args
 * each(callback: Function) - performs callback on each entry in data
