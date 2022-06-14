@@ -1,6 +1,6 @@
 {
   "name": "latermom",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Later Mom is a lazy es6 DataStructures factory also known as cache",
   "main": "index.js",
   "scripts": {
