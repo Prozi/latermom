@@ -1,8 +1,8 @@
-const Cache = require(".");
+const { Cache } = require(".");
 
 test("Calls factory once when asked for same key many times", () => {
   const hashCache = new Cache((n) => n.toString(36).split(".").pop());
-  const createHashSpy = jest.spyOn(hashCache, "factory");
+  const createHashSpy = jest.spyOn(hashCache, "create");
 
   new Array(1024)
     .fill(() => expect(hashCache.get(123)).toBeTruthy())

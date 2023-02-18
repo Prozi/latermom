@@ -25,35 +25,72 @@ leveraging usage of es6 data structures.
 ## Usage
 
 ```javascript
-// require library
-const Cache = require("latermom");
+const { Cache } = require("latermom")
 
+const maxSize = 2 // will limit max cache size upon cache.get()
+const getUser = async (id) => {
+  const response = await fetch("https://dummyjson.com/users/" + id)
+  const { firstName, lastName, address } = await response.json()
+
+  return {
+    id,
+    name: `${firstName} ${lastName}`,
+    address,
+  }
+}
+
+const usersCached = new Cache(getUser, maxSize)
+
+Promise.all([
+  usersCached.get(1),
+  usersCached.get(2),
+  usersCached.get(3),
+  usersCached.get(4),
+]).then((users) => {
+  console.log(usersCached.data) // contains only last maxSize users (3 and 4)
+  console.log(usersCached.size) // 2
+})
+```
+
+```javascript
+const { Cache } = require("latermom")
 // create cache with factory function (may take any number of parameters)
-const cache = new Cache(() => Math.random());
+const cache = new Cache(() => Math.random())
 
 // each time you call the cache.get with same parameters
 // you will get the same once lazy cached answer
-const a = cache.get(1, 2, 3);
-const b = cache.get(1, 2, 3);
-const c = cache.get(1, 2);
-const d = cache.get(1, 2, 4);
+const a = cache.get(1, 2, 3)
+const b = cache.get(1, 2, 3) // this will return the same as above
+const c = cache.get(1, 2)
+const d = cache.get(1, 2, 4)
 
-expect(a).toEqual(b); // true
-expect(a).not.toEqual(c); // true
-expect(a).not.toEqual(d); // true
+console.log(a === b) // true
+console.log(a !== c) // true
+console.log(a !== d) // true
 ```
 
 ## API
 
-- constructor(factory: Function) - creates a LaterMom (Lazy Map) instance with factory function for lazy cache
+```typescript
+class Cache<T = unknown> {
+  constructor(factoryFunction: (...args: any[]) => T, maxSize: number = Infinity) {
+    //
+  }
+}
+```
+
+- creates a LaterMom (Lazy Map) instance with factory function for lazy cache
 
 methods
 
-- getKey(...args) - creates string key from args
-- has(...args) - check if has entry at key created from args
-- get(...args) - get entry at key created from args, lazy instantiated by factory
-- del(...args) - deletes entry from data at key created from args
-- each(callback: Function) - performs callback on each entry in data
+- `get(...args: any[]): T` - get entry at key created from args, lazy instantiated by factory
+- `createKey(...args: any[]): string` - creates string key
+- `hasKey(key: string): boolean` - check if has entry at key
+- `has(...args: any[]): boolean` - check if has entry at key created from args
+- `deleteKey(key: string): boolean` - deletes entry from data at key
+- `delete(...args): boolean` - deletes entry from data at key created from args
+- `size: number` - returns size of data
+- `maxSize: number` - on insert the oldest items are deleted until reached maxSize
 
 properties:
 
