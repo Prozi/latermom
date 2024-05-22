@@ -1,5 +1,5 @@
 {
-  "name": "latermom",
+  "name": "@pietal.dev/cache",
   "version": "2.0.1",
   "description": "simple, zero-dependency, in-memory, lazy cache for javascript",
   "main": "index.js",

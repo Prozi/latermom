@@ -4,7 +4,7 @@ LaterMom?
 
 <div align="center">
 
-[![npm version](https://badge.fury.io/js/latermom.svg)](https://badge.fury.io/js/latermom) [![Known Vulnerabilities](https://snyk.io/test/github/Prozi/latermom/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Prozi/latermom?targetFile=package.json)
+[![npm version](https://badge.fury.io/js/@pietal.dev/cache.svg)](https://badge.fury.io/js/@pietal.dev/cache) [![Known Vulnerabilities](https://snyk.io/test/github/Prozi/@pietal.dev/cache/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Prozi/@pietal.dev/cache?targetFile=package.json)
 
 </div>
 
@@ -20,12 +20,12 @@ leveraging usage of es6 data structures.
 
 ## Installation
 
-`yarn add latermom --save`
+`yarn add @pietal.dev/cache --save`
 
 ## Usage
 
 ```javascript
-const { Cache } = require("latermom")
+const { Cache } = require("@pietal.dev/cache")
 
 const maxSize = 2 // will limit max cache size upon cache.get()
 const getUser = async (id) => {
@@ -53,7 +53,7 @@ Promise.all([
 ```
 
 ```javascript
-const { Cache } = require("latermom")
+const { Cache } = require("@pietal.dev/cache")
 // create cache with factory function (may take any number of parameters)
 const cache = new Cache(() => Math.random())
 
