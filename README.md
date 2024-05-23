@@ -1,16 +1,16 @@
 <h1 align="center">
-LaterMom?
+Later Mom?
 </h1>
 
 <div align="center">
 
-[![npm version](https://badge.fury.io/js/@pietal.dev/cache.svg)](https://badge.fury.io/js/@pietal.dev/cache) [![Known Vulnerabilities](https://snyk.io/test/github/Prozi/@pietal.dev/cache/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Prozi/@pietal.dev/cache?targetFile=package.json)
+[<img src="https://img.shields.io/npm/v/@pietal.dev/cache?style=for-the-badge&color=success" alt="npm version" />](https://www.npmjs.com/package/@pietal.dev/cache?activeTab=versions)
 
 </div>
 
 <p align="center">
 You know when you were a kid and mom told you to clean your room,<br/>
-when you was busy with something else, your answer would always be the same.
+when you was busy with something else, your answer would always be the same: 'later, mom'.
 </p>
 
 <p align="center">
